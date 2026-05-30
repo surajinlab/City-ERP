@@ -16,7 +16,7 @@ public class Student {
     private String course;
     private String gender;
     private LocalDate dob;
-    private int contact;
+    private long phone;
     private String email;
     private String parentName;
     private LocalDate admissionDate;
@@ -65,12 +65,12 @@ public class Student {
         this.dob = dob;
     }
 
-    public int getContact() {
-        return contact;
+    public long getPhone() {
+        return phone;
     }
 
-    public void setContact(int contact) {
-        this.contact = contact;
+    public void setPhone(long phone) {
+        this.phone = phone;
     }
 
     public String getEmail() {
@@ -137,7 +137,7 @@ public class Student {
                 ", course='" + course + '\'' +
                 ", gender='" + gender + '\'' +
                 ", dob=" + dob +
-                ", contact=" + contact +
+                ", phone=" + phone +
                 ", email='" + email + '\'' +
                 ", parentName='" + parentName + '\'' +
                 ", admissionDate=" + admissionDate +
