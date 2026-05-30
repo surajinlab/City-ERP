@@ -3,35 +3,34 @@ package com.ccm.erp.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+
 @Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    private long rollno;
     private String name;
-
-    @Column(unique = true)
-    private String email;
-
-    private String password;
-
     private String course;
+    private String gender;
+    private LocalDate dob;
+    private int contact;
+    private String email;
+    private String parentName;
+    private LocalDate admissionDate;
+    private String city;
+    private String state;
+    private String address;
+    private String university;
 
-    private String department;
-
-    private String sessionYear;
-
-    public Long getId() {
-        return id;
+    public long getRollno() {
+        return rollno;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setRollno(long rollno) {
+        this.rollno = rollno;
     }
 
     public String getName() {
@@ -42,22 +41,6 @@ public class Student {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getCourse() {
         return course;
     }
@@ -66,32 +49,102 @@ public class Student {
         this.course = course;
     }
 
-    public String getDepartment() {
-        return department;
+    public String getGender() {
+        return gender;
     }
 
-    public void setDepartment(String department) {
-        this.department = department;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    public String getSessionYear() {
-        return sessionYear;
+    public LocalDate getDob() {
+        return dob;
     }
 
-    public void setSessionYear(String sessionYear) {
-        this.sessionYear = sessionYear;
+    public void setDob(LocalDate dob) {
+        this.dob = dob;
+    }
+
+    public int getContact() {
+        return contact;
+    }
+
+    public void setContact(int contact) {
+        this.contact = contact;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getParentName() {
+        return parentName;
+    }
+
+    public void setParentName(String parentName) {
+        this.parentName = parentName;
+    }
+
+    public LocalDate getAdmissionDate() {
+        return admissionDate;
+    }
+
+    public void setAdmissionDate(LocalDate admissionDate) {
+        this.admissionDate = admissionDate;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getUniversity() {
+        return university;
+    }
+
+    public void setUniversity(String university) {
+        this.university = university;
     }
 
     @Override
     public String toString() {
         return "Student{" +
-                "id=" + id +
+                "rollno=" + rollno +
                 ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
                 ", course='" + course + '\'' +
-                ", department='" + department + '\'' +
-                ", sessionYear='" + sessionYear + '\'' +
+                ", gender='" + gender + '\'' +
+                ", dob=" + dob +
+                ", contact=" + contact +
+                ", email='" + email + '\'' +
+                ", parentName='" + parentName + '\'' +
+                ", admissionDate=" + admissionDate +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", address='" + address + '\'' +
+                ", university='" + university + '\'' +
                 '}';
     }
 }
