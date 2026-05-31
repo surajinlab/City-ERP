@@ -10,5 +10,4 @@ public class ErpApplication {
 		SpringApplication.run(ErpApplication.class, args);
 		System.out.println("CCM ERP Application Started!");
 	}
-
 }

@@ -25,6 +25,10 @@ public class Student {
     private String address;
     private String university;
 
+    // one student -> attendance
+    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
+    private Attendance attendance;
+
     public long getRollno() {
         return rollno;
     }
@@ -129,6 +133,14 @@ public class Student {
         this.university = university;
     }
 
+    public Attendance getAttendance() {
+        return attendance;
+    }
+
+    public void setAttendance(Attendance attendance) {
+        this.attendance = attendance;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -145,6 +157,7 @@ public class Student {
                 ", state='" + state + '\'' +
                 ", address='" + address + '\'' +
                 ", university='" + university + '\'' +
+                ", attendance=" + attendance +
                 '}';
     }
 }
