@@ -1,5 +1,6 @@
 package com.ccm.erp.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +19,8 @@ public class Attendance {
     private int absent;
     private float percentAttendance;
 
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "rollNo", referencedColumnName = "rollNo")
+    @JsonBackReference
     private Student student;
 }
