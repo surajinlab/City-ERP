@@ -7,16 +7,16 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-public class Attendance {
+public class Result {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long attendanceId;
+    private long resultId;
     private String subject;
-    private int totalClass;
-    private int present;
-    private int absent;
-    private float percentAttendance;
+
+    @Column(columnDefinition = "INT DEFAULT 100")
+    private int totalMarks;
+    private int obtainedMarks;
 
     @OneToOne
     @JoinColumn(name = "rollNo", referencedColumnName = "rollNo")

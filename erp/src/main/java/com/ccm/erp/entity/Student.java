@@ -4,9 +4,11 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Data
+@NoArgsConstructor
 public class Student {
 
     @Id
@@ -14,6 +16,7 @@ public class Student {
     private long rollNo;
     private String name;
     private String course;
+    private int semester;
     private String gender;
     private LocalDate dob;
     private long phone;
@@ -26,6 +29,10 @@ public class Student {
     private String university;
 
     // one student -> attendance
-    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
-    private Attendance attendance;
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
+    private List<Attendance> attendance;
+
+    // one student -> result
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
+    private List<Result> result;
 }
